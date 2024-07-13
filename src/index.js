@@ -1,34 +1,37 @@
 const fs = require('fs'); //fs: File System
+const trataErros = require('./erros/funcoesErro')
 
 const caminhoArquivo = process.argv; //argv: argument vector (vetor de argumentos)
 const link = caminhoArquivo[2];
 
+//throw e return interrompem o fluxo da funcao, ou seja, a funcao para de ser executada
 fs.readFile(link, 'utf-8', (erro, texto) => {
-    quebraEmParagrafos(texto);
-    //verificaPalavrasDuplicadas(texto);
+    try{
+        if(erro) throw erro;
+        contaPalavras(texto);
+    } catch(erro){
+        // console.log("Qual e o erro?", erro.code);
+        // return;
+
+        // if (erro.code === 'ENOENT') console.log("erro que esperava");
+        // else console.log("erro inesperado");
+
+        console.log(trataErros(erro));
+    }
 });
 
-// criar um array com as palavras
-// contar as ocorrencias
-// montar um objeto com o resultado
-
-// {
-//     "web": 5,
-//     "computador": 4
-// }
-
-function quebraEmParagrafos(texto) {
-    const paragrafos = texto.toLowerCase().split("\n");
+function contaPalavras(texto){
+    const paragrafos = extraiParagrafos(texto);
     const contagem = paragrafos
         .flatMap((paragrafo) => {
             if (!paragrafo) return [];
             return verificaPalavrasDuplicadas(paragrafo);
         });
-        /*.filter((paragrafo) => paragrafo)
-        .map((paragrafo) => {
-            return verificaPalavrasDuplicadas(paragrafo)
-        });*/ // map e parecido com o forEach mas ele retorna um array com os elementos percorridos
     console.log(contagem);
+}
+
+function extraiParagrafos(texto){
+    return texto.toLowerCase().split("\n");
 }
 
 function limpaPalavras(palavra){
