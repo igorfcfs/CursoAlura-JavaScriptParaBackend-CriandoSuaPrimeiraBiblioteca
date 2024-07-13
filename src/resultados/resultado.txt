@@ -1,3 +1,41 @@
-palavras duplicadas no parágrafo 5: uma
-palavras duplicadas no parágrafo 12: dispositivos, web, seu, conectado
-palavras duplicadas no parágrafo 14: cliente, uma, para
+palavras duplicadas no parágrafo 5: que, você, tenha
+palavras duplicadas no parágrafo 16: que, estão
+palavras duplicadas no parágrafo 18: que
+palavras duplicadas no parágrafo 20: kanban
+palavras duplicadas no parágrafo 25: scrum, por, quadro, que, alguns
+palavras duplicadas no parágrafo 28: sistema, para
+palavras duplicadas no parágrafo 32: modelo, kanban, para, desenvolvimento, software, pensamento, com, método
+palavras duplicadas no parágrafo 36: anderson, método, kanban, com, palavra, “k”, dos
+palavras duplicadas no parágrafo 38: kanban, como, método, que, forma, framework, implementação
+palavras duplicadas no parágrafo 40: uma, metodologia, método
+palavras duplicadas no parágrafo 44: kanban, que, entrega, valor
+palavras duplicadas no parágrafo 46: uma
+palavras duplicadas no parágrafo 49: kanban, características, para
+palavras duplicadas no parágrafo 51: trabalho
+palavras duplicadas no parágrafo 53: tempo, preparação
+palavras duplicadas no parágrafo 55: layout, máquinas, trabalho, reduzir
+palavras duplicadas no parágrafo 57: padronização
+palavras duplicadas no parágrafo 59: por, kanban
+palavras duplicadas no parágrafo 61: para
+palavras duplicadas no parágrafo 64: kanban
+palavras duplicadas no parágrafo 66: produção, etapas, que, etapa
+palavras duplicadas no parágrafo 68: kanban, para, material
+palavras duplicadas no parágrafo 70: kanban, produção
+palavras duplicadas no parágrafo 73: uma
+palavras duplicadas no parágrafo 86: controle, sistema
+palavras duplicadas no parágrafo 89: vantagens
+palavras duplicadas no parágrafo 91: trabalho
+palavras duplicadas no parágrafo 93: dinamismo, entre, pessoas, trabalho, equipe
+palavras duplicadas no parágrafo 95: ambiente, colaboração, trabalho, todas
+palavras duplicadas no parágrafo 97: autonomia
+palavras duplicadas no parágrafo 99: forma, problemas
+palavras duplicadas no parágrafo 101: trabalho, esforços, com
+palavras duplicadas no parágrafo 103: quais, estão, que, sejam
+palavras duplicadas no parágrafo 105: kanban
+palavras duplicadas no parágrafo 108: método, que, “comece, pelo, você
+palavras duplicadas no parágrafo 112: lean
+palavras duplicadas no parágrafo 114: pensamento, ágil
+palavras duplicadas no parágrafo 116: sistema, puxado, oposição, para
+palavras duplicadas no parágrafo 118: seu, valor, para
+palavras duplicadas no parágrafo 123: que, produto, valor, carro, por, deslocamento
+palavras duplicadas no parágrafo 126: que, valor, desperdício, parte

@@ -22,24 +22,52 @@ Dentro do package.json:
 // const trataErros = require('./erros/funcoesErro')
 
 import fs from 'fs';
+import path from 'path';
 import trataErros from './erros/funcoesErro.js'; //export default
 import { contaPalavras } from './index.js'; //export
 import { montaSaidaArquivo } from './helpers.js';
+import { Command } from 'commander'; //lib externa para configurar/padronizar o terminal com parametros
+import chalk from 'chalk'; //lib externa para decorar o terminal
 
-const caminhoArquivo = process.argv; //argv: argument vector (vetor de argumentos)
-const link = caminhoArquivo[2];
-const endereco = caminhoArquivo[3];
+const program = new Command();
 
-//throw e return interrompem o fluxo da funcao, ou seja, a funcao para de ser executada
-fs.readFile(link, 'utf-8', (erro, texto) => {
-    try{
-        if(erro) throw erro;
-        const resultado = contaPalavras(texto);
-        criaESalvaArquivo(resultado, endereco);
-    } catch(erro){
-        console.log(trataErros(erro));
-    }
-});
+program
+    .version('0.0.1')
+    .option('-t, --texto <string>', 'caminho do texto a ser processado')
+    .option('-d, --destino <string>', 'caminho da pasta onde salvar o arquivo de resultados')
+    .action((options) => {
+        const { texto, destino } = options; //desestruturacao, atribuir um valor a varias variaveis ao mesmo tempo
+        if (!texto || !destino) {
+            console.error(chalk.red('erro, favor inserir caminho de origem e destino'));
+            program.help();
+            return;
+        }
+
+        const caminhoTexto = path.resolve(texto);
+        const caminhoDestino = path.resolve(destino);
+
+        try{
+            processaArquivo(caminhoTexto, caminhoDestino);
+            console.log(chalk.green('texto processado com sucesso'));
+        } catch(erro){
+            console.log(chalk.red('ocorreu um erro no processamento', erro));
+        }
+    });
+
+program.parse();
+
+function processaArquivo(texto, destino){
+    //throw e return interrompem o fluxo da funcao, ou seja, a funcao para de ser executada
+    fs.readFile(texto, 'utf-8', (erro, texto) => {
+        try{
+            if(erro) throw erro;
+            const resultado = contaPalavras(texto);
+            criaESalvaArquivo(resultado, destino);
+        } catch(erro){
+            console.log(trataErros(erro));
+        }
+    });
+}
 
 // + facil de entender que o then
 async function criaESalvaArquivo(listaPalavras, endereco){
@@ -48,11 +76,11 @@ async function criaESalvaArquivo(listaPalavras, endereco){
     const textoPalavras = montaSaidaArquivo(listaPalavras);
     try{
         await fs.promises.writeFile(arquivoNovo, textoPalavras);
-        console.log('arquivo criado');
+        console.log(chalk.yellow('arquivo criado'));
     } catch(erro) {
         throw erro;
     } finally {
-        console.log('operacao finalizada');
+        console.log(chalk.gray('operacao finalizada'));
     }
 }
 
